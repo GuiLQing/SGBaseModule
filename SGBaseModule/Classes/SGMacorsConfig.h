@@ -18,13 +18,39 @@
 #define SGLog(...) {}
 #endif
 
-static inline void SGGLog(NSString * _Nullable sg_format, ...) {
-    va_list args;
-    va_start(args, sg_format);
-    NSString *format = [NSString stringWithFormat:@"\n文件名 : %s\n 函数名 : %s\n 行号 : %d\n%@",  __FILE__, __FUNCTION__, __LINE__, sg_format];
-    NSLogv(format, args);
-    va_end(args);
-}
+#ifndef SG_weakify
+    #if __has_feature(objc_arc)
+        #define SG_weakify( x ) \
+        _Pragma("clang diagnostic push") \
+        _Pragma("clang diagnostic ignored \"-Wshadow\"") \
+        @autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x; \
+        _Pragma("clang diagnostic pop")
+    #else
+
+    #define SG_weakify( x ) \
+        _Pragma("clang diagnostic push") \
+        _Pragma("clang diagnostic ignored \"-Wshadow\"") \
+        @autoreleasepool{} __block __typeof__(x) __block_##x##__ = x; \
+        _Pragma("clang diagnostic pop")
+    #endif
+#endif
+
+#ifndef SG_strongify
+    #if __has_feature(objc_arc)
+        #define SG_strongify( x ) \
+        _Pragma("clang diagnostic push") \
+        _Pragma("clang diagnostic ignored \"-Wshadow\"") \
+        @try{} @finally{} __typeof__(x) x = __weak_##x##__; \
+        _Pragma("clang diagnostic pop")
+    #else
+
+    #define SG_strongify( x ) \
+        _Pragma("clang diagnostic push") \
+        _Pragma("clang diagnostic ignored \"-Wshadow\"") \
+        @try{} @finally{} __typeof__(x) x = __block_##x##__; \
+        _Pragma("clang diagnostic pop")
+    #endif
+#endif
 
 static inline BOOL SG_IS_IPHONE_X() {
     BOOL iPhoneX = NO;

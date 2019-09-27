@@ -35,7 +35,6 @@ Pod::Spec.new do |s|
     
     s.subspec 'SGView' do |view|
         view.source_files = 'SGBaseModule/Classes/SGView/**/*.{h,m}'
-        view.dependency 'Masonry'
     end
     
     s.subspec 'SGViewController' do |viewController|
@@ -43,5 +42,11 @@ Pod::Spec.new do |s|
         viewController.dependency 'SGBaseModule/SGNavigationController'
         viewController.dependency 'SGBaseModule/SGView'
     end
+    
+    s.dependency 'Masonry'
+    s.dependency 'AFNetworking'
+    s.dependency 'SDWebImage'
+    s.dependency 'MJExtension'
+    s.dependency 'MJRefresh'
     
 end

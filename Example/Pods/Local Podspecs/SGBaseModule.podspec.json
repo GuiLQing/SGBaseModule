@@ -19,6 +19,23 @@
     "ios": "9.0"
   },
   "source_files": "SGBaseModule/Classes/*.{h,m}",
+  "dependencies": {
+    "Masonry": [
+
+    ],
+    "AFNetworking": [
+
+    ],
+    "SDWebImage": [
+
+    ],
+    "MJExtension": [
+
+    ],
+    "MJRefresh": [
+
+    ]
+  },
   "subspecs": [
     {
       "name": "SGBarButtonItem",
@@ -35,12 +52,7 @@
     },
     {
       "name": "SGView",
-      "source_files": "SGBaseModule/Classes/SGView/**/*.{h,m}",
-      "dependencies": {
-        "Masonry": [
-
-        ]
-      }
+      "source_files": "SGBaseModule/Classes/SGView/**/*.{h,m}"
     },
     {
       "name": "SGViewController",

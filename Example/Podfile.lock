@@ -1,16 +1,60 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Masonry (1.1.0)
+  - MJExtension (3.1.1)
+  - MJRefresh (3.2.0)
+  - SDWebImage (5.1.1):
+    - SDWebImage/Core (= 5.1.1)
+  - SDWebImage/Core (5.1.1)
   - SGBaseModule (1.0.0.1):
+    - AFNetworking
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
     - SGBaseModule/SGBarButtonItem (= 1.0.0.1)
     - SGBaseModule/SGNavigationController (= 1.0.0.1)
     - SGBaseModule/SGView (= 1.0.0.1)
     - SGBaseModule/SGViewController (= 1.0.0.1)
-  - SGBaseModule/SGBarButtonItem (1.0.0.1)
+  - SGBaseModule/SGBarButtonItem (1.0.0.1):
+    - AFNetworking
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
   - SGBaseModule/SGNavigationController (1.0.0.1):
+    - AFNetworking
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
     - SGBaseModule/SGBarButtonItem
   - SGBaseModule/SGView (1.0.0.1):
+    - AFNetworking
     - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
   - SGBaseModule/SGViewController (1.0.0.1):
+    - AFNetworking
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
     - SGBaseModule/SGNavigationController
     - SGBaseModule/SGView
 
@@ -19,16 +63,24 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
 
 EXTERNAL SOURCES:
   SGBaseModule:
     :path: "../"
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SGBaseModule: 33c4367c1229fad637f29eb37653d588c182dc1b
+  MJExtension: dfef9855ee178e1ce67f3e03b71ca4226330d87d
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
+  SGBaseModule: 4b407b45f7a681c06fa5fa2f592a881c687574bf
 
-PODFILE CHECKSUM: a376d6d6f7736fca007ed37aa42bfd5562431dfc
+PODFILE CHECKSUM: ff6e339ad4f42abcffd3adde593648028fc48a30
 
 COCOAPODS: 1.7.5
